@@ -52,7 +52,7 @@ export default function JoinQueue() {
     await supabase.functions.invoke('send-sms', {
       body: {
         to: form.phone,
-        message: `Hi ${form.customer_name}, you've been added to the waitlist at ${location.name}. We'll text you when we're ready for you!`,
+        message: `Hi ${form.customer_name}, you've joined the waitlist at Malafade Barbershop ${location.tagline}. We'll be with you shortly.`,
       },
     })
 

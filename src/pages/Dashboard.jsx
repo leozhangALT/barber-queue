@@ -29,6 +29,7 @@ export default function Dashboard() {
   const [services, setServices] = useState({})
   const [barbers, setBarbers] = useState([])
   const [dialog, setDialog] = useState(null) // { type: 'chair'|'remove'|'notify', entryId, phone? }
+  const [toast, setToast] = useState(null)
   const now = useNow()
 
   useEffect(() => {
@@ -90,6 +91,7 @@ export default function Dashboard() {
 
   return (
     <div className="db-container">
+      {toast && <div className="db-toast">{toast}</div>}
       {dialog && (
         <div className="db-overlay" onClick={() => setDialog(null)}>
           <div className="db-dialog" onClick={e => e.stopPropagation()}>
@@ -130,10 +132,12 @@ export default function Dashboard() {
                     await supabase.functions.invoke('send-sms', {
                       body: {
                         to: dialog.phone,
-                        message: `Hi ${dialog.name}, your barber is ready for you! Head on in.`,
+                        message: `Hi ${dialog.name}, your barber is ready for you! Please arrive within 5 minutes to keep your place in line.`,
                       },
                     })
                     setDialog(null)
+                    setToast('Notification sent!')
+                    setTimeout(() => setToast(null), 3000)
                   }}>Send</button>
                 </div>
               </>

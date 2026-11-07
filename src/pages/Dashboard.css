@@ -364,3 +364,19 @@ body {
 .db-barber-tag {
   color: #2ecc71;
 }
+
+.db-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a3d2b;
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 1000;
+  pointer-events: none;
+}
