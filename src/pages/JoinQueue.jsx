@@ -18,7 +18,7 @@ export default function JoinQueue() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    supabase.from('services').select('*').order('name').then(({ data }) => {
+    supabase.from('services').select('*').order('sort_order').then(({ data }) => {
       setServices(data || [])
     })
   }, [])
@@ -64,7 +64,7 @@ export default function JoinQueue() {
 
         <form onSubmit={handleSubmit} className="jq-form">
           <div className="jq-field">
-            <label htmlFor="customer_name">Full Name *</label>
+            <label htmlFor="customer_name">Name *</label>
             <input
               id="customer_name"
               name="customer_name"
