@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0a0a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+.jq-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.jq-card {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.jq-header {
+  text-align: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 28px;
+}
+
+.jq-logo {
+  font-size: 36px;
+  margin-bottom: 14px;
+  color: #c8102e;
+}
+
+.jq-header h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.jq-header p {
+  margin-top: 4px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8102e;
+}
+
+.jq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.jq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jq-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.jq-field input,
+.jq-field select {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 2px;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.jq-field input::placeholder {
+  color: #444;
+}
+
+.jq-field input:focus,
+.jq-field select:focus {
+  border-color: #c8102e;
+}
+
+.jq-field select option {
+  background: #1a1a1a;
+}
+
+.jq-btn {
+  background: #c8102e;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  padding: 14px;
+  text-transform: uppercase;
+  transition: background 0.2s, opacity 0.2s;
+  width: 100%;
+}
+
+.jq-btn:hover:not(:disabled) {
+  background: #e0122f;
+}
+
+.jq-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.jq-btn-back {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  border-radius: 2px;
+  color: #555;
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 12px;
+  width: 100%;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.jq-btn-back:hover {
+  border-color: #444;
+  color: #888;
+}
+
+.jq-error {
+  color: #c8102e;
+  font-size: 0.9rem;
+  text-align: center;
+}

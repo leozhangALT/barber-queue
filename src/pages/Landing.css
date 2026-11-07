@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0a0a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+.land-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  background: #0a0a0a;
+}
+
+.land-card {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 36px 24px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Header */
+.land-header {
+  text-align: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.land-logo {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #c8102e;
+}
+
+.land-header h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.land-header p {
+  margin-top: 6px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8102e;
+}
+
+/* Queue status box */
+.land-queue-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #1a1a1a;
+  border: 1px solid #1e1e1e;
+  border-radius: 6px;
+  padding: 24px 20px;
+}
+
+.land-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.land-count-number {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #c8102e;
+  line-height: 1;
+}
+
+.land-count-label {
+  font-size: 0.72rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Buttons */
+.land-btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 14px 28px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.land-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.land-btn-join {
+  background: #c8102e;
+  color: #fff;
+}
+
+.land-my-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.land-btn-leave {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #555;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* Info rows */
+.land-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid #1e1e1e;
+  padding-top: 24px;
+}
+
+.land-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+.land-hours-line {
+  display: block;
+  text-align: left;
+}
+
+.land-info-icon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.land-booking-link {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: none;
+  border-top: 1px solid #1e1e1e;
+  padding-top: 20px;
+  letter-spacing: 0.5px;
+}
+
