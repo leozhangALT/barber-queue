@@ -235,6 +235,12 @@ body {
   border: 1px solid #1e6e3a;
 }
 
+.db-btn-back {
+  background: #3d3000;
+  color: #f0c040;
+  border: 1px solid #5a4a00;
+}
+
 .db-btn-done {
   background: #1a5c32;
   color: #2ecc71;

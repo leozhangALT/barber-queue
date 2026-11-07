@@ -227,8 +227,8 @@ export default function Dashboard() {
                     >
                       Done
                     </button>
-                    <button className="db-btn db-btn-notify" onClick={() => setDialog({ type: 'notify', entryId: entry.id, phone: entry.phone, name: entry.customer_name })}>
-                      🔔
+                    <button className="db-btn db-btn-back" onClick={() => updateStatus(entry.id, 'waiting')}>
+                      Back
                     </button>
                     <button
                       className="db-btn db-btn-remove"
@@ -258,6 +258,11 @@ export default function Dashboard() {
                     <div className="db-card-info">
                       <div className="db-name">{entry.customer_name} <span className="db-meta">— {services[entry.service_id] ? `${services[entry.service_id].name} ($${services[entry.service_id].price})` : '—'}{entry.barber_id && barberMap[entry.barber_id] && <span className="db-barber-tag"> · {barberMap[entry.barber_id]}</span>}</span></div>
                     </div>
+                  </div>
+                  <div className="db-actions">
+                    <button className="db-btn db-btn-back" onClick={() => updateStatus(entry.id, 'in_chair')}>
+                      Undo
+                    </button>
                   </div>
                 </div>
               ))}
