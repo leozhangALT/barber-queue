@@ -69,7 +69,7 @@ export default function JoinQueue() {
               id="customer_name"
               name="customer_name"
               type="text"
-              placeholder="Your name"
+              placeholder=""
               value={form.customer_name}
               onChange={handleChange}
               required
@@ -82,7 +82,7 @@ export default function JoinQueue() {
               id="phone"
               name="phone"
               type="tel"
-              placeholder="(555) 000-0000"
+              placeholder=""
               value={form.phone}
               onChange={handleChange}
               required
