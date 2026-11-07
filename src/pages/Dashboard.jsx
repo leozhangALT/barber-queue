@@ -34,10 +34,10 @@ export default function Dashboard() {
   useEffect(() => {
     fetchQueue()
 
-    supabase.from('services').select('id, name').then(({ data }) => {
+    supabase.from('services').select('id, name, price').then(({ data }) => {
       if (data) {
         const map = {}
-        data.forEach(s => { map[s.id] = s.name })
+        data.forEach(s => { map[s.id] = { name: s.name, price: s.price } })
         setServices(map)
       }
     })
@@ -165,7 +165,7 @@ export default function Dashboard() {
                 <div key={entry.id} className="db-card">
                   <div className="db-card-top">
                     <div className="db-card-info">
-                      <div className="db-name">{entry.customer_name} <span className="db-meta">— {services[entry.service_id] || '—'}</span></div>
+                      <div className="db-name">{entry.customer_name} <span className="db-meta">— {services[entry.service_id] ? `${services[entry.service_id].name} ($${services[entry.service_id].price})` : '—'}</span></div>
                     </div>
                     <span className="db-wait-time">{waitingTime(entry.created_at, now)}</span>
                   </div>
@@ -205,7 +205,7 @@ export default function Dashboard() {
                 <div key={entry.id} className="db-card db-card-chair">
                   <div className="db-card-top">
                     <div className="db-card-info">
-                      <div className="db-name">{entry.customer_name} <span className="db-meta">— {services[entry.service_id] || '—'}{entry.barber_id && barberMap[entry.barber_id] && <span className="db-barber-tag"> · {barberMap[entry.barber_id]}</span>}</span></div>
+                      <div className="db-name">{entry.customer_name} <span className="db-meta">— {services[entry.service_id] ? `${services[entry.service_id].name} ($${services[entry.service_id].price})` : '—'}{entry.barber_id && barberMap[entry.barber_id] && <span className="db-barber-tag"> · {barberMap[entry.barber_id]}</span>}</span></div>
                     </div>
                   </div>
                   <div className="db-actions">
@@ -244,7 +244,7 @@ export default function Dashboard() {
                 <div key={entry.id} className="db-card db-card-done">
                   <div className="db-card-top">
                     <div className="db-card-info">
-                      <div className="db-name">{entry.customer_name} <span className="db-meta">— {services[entry.service_id] || '—'}{entry.barber_id && barberMap[entry.barber_id] && <span className="db-barber-tag"> · {barberMap[entry.barber_id]}</span>}</span></div>
+                      <div className="db-name">{entry.customer_name} <span className="db-meta">— {services[entry.service_id] ? `${services[entry.service_id].name} ($${services[entry.service_id].price})` : '—'}{entry.barber_id && barberMap[entry.barber_id] && <span className="db-barber-tag"> · {barberMap[entry.barber_id]}</span>}</span></div>
                     </div>
                   </div>
                 </div>
