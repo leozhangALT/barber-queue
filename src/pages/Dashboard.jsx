@@ -126,7 +126,15 @@ export default function Dashboard() {
                 <p>Send a notification to this client?</p>
                 <div className="db-dialog-actions">
                   <button className="db-dialog-cancel" onClick={() => setDialog(null)}>Cancel</button>
-                  <button className="db-barber-btn" onClick={() => setDialog(null)}>Send</button>
+                  <button className="db-barber-btn" onClick={async () => {
+                    await supabase.functions.invoke('send-sms', {
+                      body: {
+                        to: dialog.phone,
+                        message: `Hi ${dialog.name}, your barber is ready for you! Head on in.`,
+                      },
+                    })
+                    setDialog(null)
+                  }}>Send</button>
                 </div>
               </>
             )}
@@ -176,7 +184,7 @@ export default function Dashboard() {
                     >
                       Chair
                     </button>
-                    <button className="db-btn db-btn-notify" onClick={() => setDialog({ type: 'notify', entryId: entry.id })}>
+                    <button className="db-btn db-btn-notify" onClick={() => setDialog({ type: 'notify', entryId: entry.id, phone: entry.phone, name: entry.customer_name })}>
                       🔔
                     </button>
                     <button
@@ -215,7 +223,7 @@ export default function Dashboard() {
                     >
                       Done
                     </button>
-                    <button className="db-btn db-btn-notify" onClick={() => setDialog({ type: 'notify', entryId: entry.id })}>
+                    <button className="db-btn db-btn-notify" onClick={() => setDialog({ type: 'notify', entryId: entry.id, phone: entry.phone, name: entry.customer_name })}>
                       🔔
                     </button>
                     <button

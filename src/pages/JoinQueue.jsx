@@ -43,14 +43,22 @@ export default function JoinQueue() {
       .select('id')
       .single()
 
-    setLoading(false)
-
     if (error) {
+      setLoading(false)
       setError('Something went wrong. Please try again.')
-    } else {
-      localStorage.setItem('waitlist_id', data.id)
-      navigate(`/${slug}`)
+      return
     }
+
+    await supabase.functions.invoke('send-sms', {
+      body: {
+        to: form.phone,
+        message: `Hi ${form.customer_name}, you've been added to the waitlist at ${location.name}. We'll text you when we're ready for you!`,
+      },
+    })
+
+    setLoading(false)
+    localStorage.setItem('waitlist_id', data.id)
+    navigate(`/${slug}`)
   }
 
   return (
